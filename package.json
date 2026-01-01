@@ -1,0 +1,50 @@
+{
+  "name": "fetch-rate-limited",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A typescript library for rate limited fetch calls",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rimraf docs && tsc",
+    "test": "vitest --exclude=tests/performance.spec.ts --exclude=tests/real.spec.ts --no-watch",
+    "test:coverage": "vitest --exclude=tests/performance.spec.ts --exclude=tests/real.spec.ts --no-watch --coverage",
+    "test:performance": "vitest run tests/performance.spec.ts --no-watch",
+    "test:real": "npx tsx tests/real.spec.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=21.0.0"
+  },
+  "keywords": [
+    "fetch",
+    "request",
+    "rate-limited",
+    "rate-limiter",
+    "rate-limiting"
+  ],
+  "author": "matrm <matrm@gmx.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.16",
+    "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matrm/fetch-rate-limited.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matrm/fetch-rate-limited/issues"
+  },
+  "homepage": "https://github.com/matrm/fetch-rate-limited#readme"
+}
